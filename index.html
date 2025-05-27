@@ -447,8 +447,9 @@
 
     <script>
         // Sample data structure - replace with your actual data
-        const vehicles": {
-    "alfaromeo 159berlina": {
+        const HALOWIPERS_DATA = {
+            vehicles: {
+                "alfaromeo 159berlina": {
       "2005-2012": {
         "title": "ALFA ROMEO 159 Berlina 2005-2012",
         "description": "Halowipers offer superior clarity and ultra-quiet wiping for your ALFA ROMEO 159 Berlina 2005-2012. Say goodbye to streaks and enjoy smooth performance that enhances your driving safety. Our wiper blades provide a perfect fit and are incredibly easy to install, ensuring long-lasting use and crystal-clear vision in any weather. Get premium quality without the premium price!",
@@ -48009,9 +48010,16 @@ Perfect for when you know exactly what you need!`,
         }
 
         function sendMessage() {
-            if (!input.value.trim() || isTyping) return;
+            console.log('Send button clicked!'); // Debug log
+            
+            if (!input.value.trim() || isTyping) {
+                console.log('Message blocked:', !input.value.trim() ? 'empty input' : 'already typing');
+                return;
+            }
             
             const userMessage = input.value.trim();
+            console.log('Sending message:', userMessage);
+            
             addMessage('user', userMessage);
             
             input.value = '';
@@ -48027,15 +48035,89 @@ Perfect for when you know exactly what you need!`,
             setTimeout(() => {
                 removeTypingIndicator();
                 isTyping = false;
-                sendBtn.disabled = false;
+                sendBtn.disabled = input.value.trim().length === 0;
                 
                 const response = generateResponse(userMessage);
                 addMessage('ai', response.content, response.productUrl);
+                
+                console.log('Response sent');
             }, 1800);
         }
 
-        // Initialize
-        sendBtn.disabled = true;
+        // Enhanced event handling for iframe compatibility
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Widget loaded successfully');
+            
+            // Multiple ways to handle send button
+            const sendButton = document.getElementById('hw-send-btn');
+            
+            if (sendButton) {
+                // Remove any existing event listeners
+                sendButton.onclick = null;
+                
+                // Add multiple event listeners for better compatibility
+                sendButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    sendMessage();
+                });
+                
+                sendButton.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    sendMessage();
+                });
+                
+                // Also ensure onclick still works
+                sendButton.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    sendMessage();
+                    return false;
+                };
+            }
+            
+            // Enhanced input handling
+            if (input) {
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+                
+                input.addEventListener('input', function() {
+                    const length = input.value.length;
+                    charCounter.textContent = `${length}/200`;
+                    sendBtn.disabled = length === 0 || isTyping;
+                });
+            }
+            
+            // Quick question buttons
+            const quickButtons = document.querySelectorAll('.hw-quick-button');
+            quickButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const text = this.textContent.replace(/[🚗📏🏎️🔧]\s*/, '');
+                    setInput(text);
+                });
+            });
+        });
+
+        // Backup function accessible globally
+        window.sendMessage = sendMessage;
+        window.setInput = setInput;
+
+        // Initialize when everything is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                sendBtn.disabled = true;
+                console.log('Widget initialized');
+            });
+        } else {
+            sendBtn.disabled = true;
+            console.log('Widget initialized (already loaded)');
+        }
     </script>
 </body>
 </html>
