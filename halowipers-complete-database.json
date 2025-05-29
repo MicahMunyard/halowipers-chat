@@ -20474,53 +20474,82 @@
       }
     },
     "isuzu d-max": {
-      "2002-2012": {
-        "title": "ISUZU D-MAX 2002-2012",
-        "description": "Enhance your ISUZU D-MAX (2002-2012) with Halowipers for exceptional wiping effectiveness. Say farewell to streaks and annoying sounds while enjoying clear visibility in any weather. These blades fit snugly and are designed for easy installation, guaranteeing long-lasting performance and clarity at a budget-friendly price.",
-        "price": "Windshield Wipers19.99$15.99$",
-        "url": "https://www.halowipers.com.au/wiper-blades/isuzu-d-max-2002-2012",
-        "wiperSizes": [
-          "12\"",
-          "19\"",
-          "91\"",
-          "27\"",
-          "12\" ",
-          "13\" ",
-          "14\" ",
-          "15\" ",
-          "16\" ",
-          "17\" ",
-          "18\" ",
-          "19\" ",
-          "20\" ",
-          "21\" ",
-          "22\" ",
-          "23\" ",
-          "24\" ",
-          "25\" ",
-          "26\" ",
-          "27\" ",
-          "28\" ",
-          "29\" ",
-          "30\" ",
-          "31\" ",
-          "32\"",
-          "28\"",
-          "0\" ",
-          "99\""
-        ],
-        "driverSize": "12\"",
-        "passengerSize": "12\"",
-        "features": [],
-        "hasContent": true,
-        "make": "isuzu",
-        "model": "d-max",
-        "years": [
-          "2002",
-          "2012"
-        ]
-      }
-    },
+  "2002-2012": {
+    "title": "ISUZU D-MAX 2002-2012",
+    "description": "Enhance your ISUZU D-MAX (2002-2012) with Halowipers for exceptional wiping effectiveness. Say farewell to streaks and annoying sounds while enjoying clear visibility in any weather. These blades fit snugly and are designed for easy installation, guaranteeing long-lasting performance and clarity at a budget-friendly price.",
+    "price": "Windshield Wipers19.99$15.99$",
+    "url": "https://www.halowipers.com.au/wiper-blades/isuzu-d-max-2002-2012",
+    "wiperSizes": [
+      "12\"",
+      "19\"",
+      "91\"",
+      "27\"",
+      "12\" ",
+      "13\" ",
+      "14\" ",
+      "15\" ",
+      "16\" ",
+      "17\" ",
+      "18\" ",
+      "19\" ",
+      "20\" ",
+      "21\" ",
+      "22\" ",
+      "23\" ",
+      "24\" ",
+      "25\" ",
+      "26\" ",
+      "27\" ",
+      "28\" ",
+      "29\" ",
+      "30\" ",
+      "31\" ",
+      "32\"",
+      "28\"",
+      "0\" ",
+      "99\""
+    ],
+    "driverSize": "12\"",
+    "passengerSize": "12\"",
+    "features": [],
+    "hasContent": true,
+    "make": "isuzu",
+    "model": "d-max",
+    "years": [
+      "2002",
+      "2012"
+    ]
+  },
+  "2020-2025": {
+    "title": "ISUZU D-MAX RG (LSU, X-Terrain) 2020-2025",
+    "description": "Enhance your driving experience with Halowipers for your ISUZU D-MAX RG (LSU, X-Terrain) 2020–2025. Designed to match your vehicle's specifications perfectly for optimal performance and visibility.",
+    "price": "Single wiper: $34.99 | Pair: $59.99",
+    "url": "https://www.halowipers.com.au/wiper-blades/isuzu-d-max-rg-lsu-x-terrain-2020-2025",
+    "wiperSizes": [
+      "16\"",
+      "23\""
+    ],
+    "driverSize": "23\"",
+    "passengerSize": "16\"",
+    "features": [
+      "Perfect fit for RG model",
+      "Compatible with LSU and X-Terrain variants",
+      "Premium quality blades",
+      "Easy installation"
+    ],
+    "hasContent": true,
+    "make": "isuzu",
+    "model": "d-max",
+    "years": [
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024",
+      "2025"
+    ]
+  }
+}
     "isuzu mu-7": {
       "2004-2013": {
         "title": "ISUZU MU-7 2004-2013",
